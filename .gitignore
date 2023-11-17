@@ -1,2 +1,9 @@
-/tor/keys
+# Caddy data
 /caddy/data
+
+# Key generator
+/mkp224o
+
+# Keys
+/tor/keys
+/generated
