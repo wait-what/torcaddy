@@ -1,0 +1,32 @@
+# Clearnet/darknet variants
+# Note: the 'http://' part disables auto-https, you might want to remove it
+#       however, do not remove the 'http://' part from the .onion addresses
+http://aaaaa.com {
+    respond "meow" 200
+}
+
+http://aaaaa4fmytkvf4vhj5zvezwtibice3ksrvg4mdlblfagrvnu4yabjmad.onion {
+    respond "nya" 200
+}
+
+# Combined
+http://nyaaah6cwqaaniitdumtjq6are3lsesqfztjjpld6irsteiqyezhtzyd.onion http://nyaaaa.com {
+    respond "mrow" 200
+}
+
+# Onion subdomain
+http://subdomain.meowwwrm7mnsc7d5j5fphr7uaa4gshzltbmfdt57r2i7cm6ch5bedqad.onion {
+    respond "Subdomain" 200
+}
+
+# Reverse proxy to example service
+http://mrowwljwbbjudjelok64sr2jm56p6fgztjmh3wfribrm7kntyw4t2eyd.onion {
+    reverse_proxy example:80
+}
+
+# Static file server
+http://bbbbbhfsqewxcupurttp6iry4egcmpmbwto3chhcsm7puufy73ryouqd.onion {
+    file_server {
+        root /srv
+    }
+}

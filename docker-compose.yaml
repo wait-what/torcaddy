@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  caddy:
+    image: caddy:latest
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./caddy/srv:/srv
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
+      - ./caddy/data/data:/data
+      - ./caddy/data/config:/config
+
+  tor:
+    build: ./tor
+    depends_on:
+      - caddy
+    volumes:
+      - ./tor/keys:/var/lib/tor_keys:ro
+
+  # Example service to be reverse proxied
+  example:
+    image: androw/uhttpd
