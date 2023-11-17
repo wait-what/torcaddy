@@ -7,15 +7,18 @@ Easily host clearnet/darknet sites using caddy in docker
 git clone https://github.com/wait-what/torcaddy
 ```
 - Use [mkp224o](https://github.com/cathugger/mkp224o) to generate onion address keys
+    - Download from [releases](https://github.com/cathugger/mkp224o/releases)
+    - Or build from source
+    ```bash
+    git clone https://github.com/cathugger/mkp224o
+    cd mkp224o
+
+    ./autogen.sh
+    ./configure
+    make
+    ```
 > Note: don't try a prefix longer than 5-6 characters, it will take forever
-```bash
-git clone https://github.com/cathugger/mkp224o
-cd mkp224o
-
-./autogen.sh
-./configure
-make
-
+```
 ./mkp224o -B -d ../generated -n 1 [prefix]
 ```
 - Place your generated `hs_ed25519_secret_key` files in `tor/keys`
@@ -36,4 +39,4 @@ done
 - Run `docker compose logs -f` to see logs
 
 ## License
-[Unlicense](https://unlicense.org/)
+[Unlicense](https://choosealicense.com/licenses/unlicense/)
