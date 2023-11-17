@@ -28,8 +28,12 @@ for i in generated/*; do
 done
 ```
 - Edit `docker-compose.yaml`
-> You might want to remove the `example` service
+    - You might want to remove the `example` service
+    - If you are not interested in the clearnet part, remove the `ports` section from `caddy`
 - Edit `caddy/Caddyfile` (examples inside)
 - Run `docker compose up -d` to start the stack
 > Note: if you edit `Dockerfile` or `entrypoint.sh` you need to rebuild the image with `docker compose build`
 - Run `docker compose logs -f` to see logs
+
+## License
+[Unlicense](https://unlicense.org/)
