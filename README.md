@@ -31,4 +31,5 @@ done
 > You might want to remove the `example` service
 - Edit `caddy/Caddyfile` (examples inside)
 - Run `docker compose up -d` to start the stack
+> Note: if you edit `Dockerfile` or `entrypoint.sh` you need to rebuild the image with `docker compose build`
 - Run `docker compose logs -f` to see logs
